@@ -1,0 +1,100 @@
+/* ======== تخطيط صفحة المتجر ======== */
+.store-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 3 أجزاء للمنتجات وجزء للفلترة */
+    gap: 30px;
+    padding: 40px 0;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+/* ======== 1. تصميم العمود الجانبي (الفلاتر) ======== */
+.store-sidebar {
+    background-color: var(--surface-color);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    align-self: flex-start; /* ليبقى في الأعلى */
+}
+
+.filter-group {
+    margin-bottom: 30px;
+}
+
+.filter-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-options label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--text-color-muted);
+    transition: color 0.3s;
+}
+
+.filter-options label:hover {
+    color: var(--text-color);
+}
+
+.filter-options input[type="checkbox"] {
+    margin-left: 8px;
+    accent-color: var(--primary-color);
+}
+
+.price-slider {
+    width: 100%;
+    cursor: pointer;
+}
+
+.price-range-display {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--text-color-muted);
+}
+
+.store-sidebar .btn {
+    width: 100%;
+}
+
+
+/* ======== 2. تصميم منطقة المنتجات ======== */
+.store-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--surface-color);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+}
+
+.sort-options {
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    font-family: var(--font-ar);
+}
+
+/* سنعيد استخدام نفس تصميم products-grid و product-card من الأنماط العامة */
+.store-products .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+
+/* ======== تجاوب صفحة المتجر مع الجوال ======== */
+@media (max-width: 992px) {
+    .store-layout {
+        grid-template-columns: 1fr; /* تحويل التخطيط إلى عمود واحد */
+    }
+}
