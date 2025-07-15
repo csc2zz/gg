@@ -1,0 +1,49 @@
+/* ======== قسم المنتجات المميزة ======== */
+.featured-products { padding: 60px 0; }
+.featured-products h2, .why-us h2, .subscriptions h2 { text-align: center; font-size: 36px; margin-bottom: 50px; font-weight: 900; }
+.products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.product-card { background-color: var(--surface-color); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); transition: transform 0.3s, box-shadow 0.3s; }
+.product-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2); }
+.product-image img { width: 100%; height: auto; display: block; }
+.product-info { padding: 20px; }
+.product-info h3 { font-size: 20px; margin-bottom: 10px; }
+.product-price { font-size: 24px; font-weight: 700; color: var(--primary-color); margin-bottom: 20px; }
+.product-info .btn { width: 100%; }
+
+/* ======== قسم لماذا تختارنا ======== */
+.why-us { padding: 80px 0; background-color: var(--surface-color); transition: background-color 0.3s; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; text-align: center; }
+.feature-icon { font-size: 48px; color: var(--primary-color); margin-bottom: 20px; }
+.feature-item h3 { font-size: 22px; margin-bottom: 10px; }
+.feature-item p { color: var(--text-color-muted); line-height: 1.7; }
+
+/* ======== قسم الاشتراكات ======== */
+.subscriptions { padding: 60px 0; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.pricing-card { background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: 12px; padding: 30px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; position: relative; display: flex; flex-direction: column; }
+.pricing-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+.pricing-card.featured { border-color: var(--primary-color); border-width: 2px; transform: scale(1.05); }
+.pricing-card.featured:hover { transform: scale(1.05) translateY(-10px); }
+.popular-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background-color: var(--primary-color); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 700; }
+.card-header h3 { font-size: 24px; margin-bottom: 5px; }
+.card-header p { color: var(--text-color-muted); font-size: 16px; }
+.card-price { margin: 25px 0; }
+.card-price .price { font-family: var(--font-en); font-size: 42px; font-weight: 900; color: var(--text-color); }
+.card-price .period { color: var(--text-color-muted); }
+.card-features { list-style: none; margin-bottom: 30px; text-align: right; flex-grow: 1; }
+.card-features li { margin-bottom: 15px; color: var(--text-color); display: flex; align-items: center; justify-content: flex-start; }
+.card-features li i { font-size: 16px; margin-left: 10px; width: 20px; }
+.card-features li .fa-check { color: #28a745; }
+.card-features li .fa-times { color: #dc3545; }
+body[dir="ltr"] .card-features li { justify-content: flex-start; }
+body[dir="ltr"] .card-features li i { margin-left: 0; margin-right: 10px; }
+
+/* ======== تجاوب الأقسام مع الجوال ======== */
+@media (max-width: 992px) {
+    .pricing-grid { grid-template-columns: 1fr; gap: 40px; max-width: 500px; margin: 0 auto; }
+    .pricing-card.featured { transform: scale(1); }
+    .pricing-card.featured:hover { transform: translateY(-10px); }
+}
+@media (max-width: 768px) {
+    .featured-products h2, .why-us h2, .subscriptions h2 { font-size: 28px; }
+}
