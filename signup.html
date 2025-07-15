@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="signup_page_title">إنشاء حساب جديد - GG.SA</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages/signup.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="dark-mode signup-page-body">
+
+    <main class="signup-container">
+        <div class="signup-box">
+            <div class="signup-header">
+                <a href="index.html" class="logo">GG<span>.SA</span></a>
+                <h2 data-key="signup_main_title">اصنع أسطورتك</h2>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">1</div>
+                <div class="progress-step" data-step="2">2</div>
+                <div class="progress-step" data-step="3">3</div>
+            </div>
+
+            <form id="signup-form">
+                <div class="form-step active" data-step="1">
+                    <h3 class="step-title" data-key="step1_title">المعلومات الأساسية</h3>
+                    <div class="input-group">
+                        <input type="text" id="username" required>
+                        <label for="username" data-key="signup_username">اسم المستخدم</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required>
+                        <label for="email" data-key="signup_email">البريد الإلكتروني</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password" required>
+                        <label for="password" data-key="signup_password">كلمة المرور</label>
+                        <div class="password-strength">
+                            <div class="strength-bar"></div>
+                            <span class="strength-text" data-key="strength_weak">ضعيفة</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary next-btn" data-key="btn_next">التالي</button>
+                </div>
+
+                <div class="form-step" data-step="2">
+                    <h3 class="step-title" data-key="step2_title">اختر صورتك الرمزية</h3>
+                    <div class="avatar-grid">
+                        <label><input type="radio" name="avatar" value="1" checked><img src="https://i.pinimg.com/736x/fb/7a/17/fb7a17e227af3cf2e63c756120842209.jpg" alt="Avatar 1"></label>
+                        <label><input type="radio" name="avatar" value="2"><img src="https://i.pinimg.com/736x/e4/32/12/e43212860a10e5e63c80c2ce5f76f8b3.jpg" alt="Avatar 2"></label>
+                        <label><input type="radio" name="avatar" value="3"><img src="https://i.pinimg.com/736x/a1/c1/62/a1c162183831016dee42be0914d4ffd1.jpg" alt="Avatar 3"></label>
+                        <label><input type="radio" name="avatar" value="4"><img src="https://i.pinimg.com/736x/7a/fa/78/7afa780f119d375b0d925834b9c2c39d.jpg" alt="Avatar 4"></label>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-secondary prev-btn" data-key="btn_prev">السابق</button>
+                        <button type="button" class="btn btn-primary next-btn" data-key="btn_next">التالي</button>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="3">
+                    <h3 class="step-title" data-key="step3_title">أنت على وشك الانتهاء!</h3>
+                    <div class="terms">
+                        <label>
+                            <input type="checkbox" id="terms" required>
+                            <span data-key="signup_terms">أوافق على <a href="#">شروط الخدمة</a> و <a href="#">سياسة الخصوصية</a></span>
+                        </label>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-secondary prev-btn" data-key="btn_prev">السابق</button>
+                        <button type="submit" class="btn btn-primary" data-key="btn_create_account">إنشاء الحساب</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
