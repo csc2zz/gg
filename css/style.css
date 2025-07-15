@@ -1,0 +1,134 @@
+/* ======== استيراد الخطوط ======== */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Poppins:wght@400;700;900&display=swap');
+
+/* ======== المتغيرات العامة ======== */
+:root {
+    --container-width: 1200px;
+    --font-ar: 'Tajawal', sans-serif;
+    --font-en: 'Poppins', sans-serif;
+}
+
+/* ======== الوضع الداكن (افتراضي) ======== */
+body.dark-mode {
+    --bg-color: #0d0d1a;
+    --surface-color: #1c1c2e;
+    --primary-color: #8a2be2;
+    --secondary-color: #3d3d5c;
+    --text-color: #e0e0e0;
+    --text-color-muted: #a0a0a0;
+    --border-color: #333;
+}
+
+/* ======== الوضع الفاتح ======== */
+body.light-mode {
+    --bg-color: #f4f7fc;
+    --surface-color: #ffffff;
+    --primary-color: #6a11cb;
+    --secondary-color: #e9e9f0;
+    --text-color: #212121;
+    --text-color-muted: #666;
+    --border-color: #ddd;
+}
+
+/* ======== الأنماط العامة ======== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.3s, color 0.3s; }
+a { color: var(--primary-color); text-decoration: none; }
+.container { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
+
+/* ======== الهيدر ======== */
+.site-header { background-color: var(--surface-color); padding: 15px 0; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; transition: background-color 0.3s, border-color 0.3s; }
+.site-header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: var(--font-en); font-size: 28px; font-weight: 900; color: #fff; }
+body.light-mode .logo { color: var(--text-color); }
+.logo span { color: var(--primary-color); }
+.navbar a { color: var(--text-color-muted); margin: 0 15px; font-size: 16px; font-weight: 700; transition: color 0.3s; }
+.navbar a:hover, .navbar a.active { color: #fff; }
+body.light-mode .navbar a:hover, body.light-mode .navbar a.active { color: var(--primary-color); }
+.header-actions .action-btn { background: none; border: none; color: var(--text-color); font-size: 20px; margin-left: 15px; cursor: pointer; width: 30px; text-align: center; }
+.mobile-only { display: none; }
+
+/* ======== البانر الرئيسي (Hero) ======== */
+.hero { background-image: linear-gradient(rgba(13, 13, 26, 0.8), rgba(13, 13, 26, 1)), url('https://via.placeholder.com/1500x600.png/1c1c2e/8a2be2?text=Gaming+Background'); background-size: cover; background-position: center; padding: 100px 0; text-align: center; }
+.hero h1 { font-size: 48px; font-weight: 900; margin-bottom: 15px; color: #fff; }
+.hero p { font-size: 20px; color: var(--text-color-muted); margin-bottom: 30px; }
+.btn { padding: 12px 30px; border-radius: 8px; font-weight: 700; font-size: 16px; cursor: pointer; transition: all 0.3s; border: 2px solid transparent; }
+.btn-primary { background-color: var(--primary-color); color: #fff; }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4); }
+.btn-secondary { background-color: var(--secondary-color); color: var(--text-color); }
+.btn-secondary:hover { border-color: var(--primary-color); background-color: transparent; color: var(--primary-color); }
+
+/* ======== الفوتر ======== */
+.site-footer { background-color: var(--surface-color); padding: 30px 0; margin-top: 50px; text-align: center; border-top: 1px solid var(--border-color); }
+.site-footer .container { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+.social-links a { margin: 0 10px; font-size: 20px; color: var(--text-color-muted); transition: color 0.3s; }
+.social-links a:hover { color: var(--primary-color); }
+
+/* ======== التجاوب مع الجوال (Responsive) ======== */
+@media (max-width: 768px) {
+    .navbar { display: none; position: absolute; top: 100%; left: 0; right: 0; background-color: var(--surface-color); flex-direction: column; width: 100%; padding: 20px; border-bottom: 1px solid var(--border-color); }
+    .navbar.active { display: flex; }
+    .navbar a { margin: 10px 0; width: 100%; text-align: center; }
+    .mobile-only { display: inline-block; }
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 16px; }
+    /* ======== تصميم الفوتر الموحد ======== */
+.site-footer {
+    background-color: #080810; /* لون أغمق قليلاً من الخلفية */
+    padding: 50px 0 0;
+    margin-top: 50px;
+    border-top: 1px solid var(--border-color);
+}
+.footer-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.footer-about .logo {
+    margin-bottom: 15px;
+    display: inline-block;
+}
+.footer-about p {
+    color: var(--text-color-muted);
+    line-height: 1.7;
+}
+.footer-links h4, .footer-social h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.footer-links ul {
+    list-style: none;
+}
+.footer-links ul li a {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-color-muted);
+    transition: color 0.3s, transform 0.3s;
+}
+.footer-links ul li a:hover {
+    color: var(--primary-color);
+    transform: translateX(-5px);
+}
+.social-icons a {
+    color: var(--text-color-muted);
+    font-size: 1.5rem;
+    margin-left: 15px;
+    transition: color 0.3s, transform 0.3s;
+}
+.social-icons a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-color-muted);
+    font-size: 0.9rem;
+}
+}
